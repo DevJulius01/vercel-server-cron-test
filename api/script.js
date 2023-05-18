@@ -1,1 +1,3 @@
-console.log("Lo hicimos?!")
+export default function script() {
+    console.log("lo hicimos?")
+}
