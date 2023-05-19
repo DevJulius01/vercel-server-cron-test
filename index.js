@@ -1,6 +1,6 @@
 const server = http.createServer((request, response) => {
     // Capturando la URL de la solicitud
-    const url = new URL(request.url, `http://${request.headers.host}/script`);
+    const url = new URL(request.url, `http://${request.headers.host}/api/script`);
 
     // Capturando un parámetro específico llamado "param"
     const paramValue = url.searchParams.get('param');
