@@ -1,3 +1,5 @@
+const http = require('http');
+
 const server = http.createServer((request, response) => {
     // Capturando la URL de la solicitud
     const url = new URL(request.url, `http://${request.headers.host}/api/script`);
