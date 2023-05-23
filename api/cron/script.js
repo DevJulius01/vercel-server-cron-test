@@ -1,6 +1,6 @@
 /* import * as dotenv from 'dotenv'
 dotenv.config() */
-import { get } from 'axios';
+const axios = require('axios')
 const { ACCESS_KEY } = process.env
 
 function script(req, res) {
