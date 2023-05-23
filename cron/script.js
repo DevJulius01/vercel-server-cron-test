@@ -2,10 +2,14 @@
 dotenv.config() */
 const { ACCESS_KEY } = process.env
 
-export default async function script() {
+export default function script() {
     try {
-        const response = await axios.get(`http://localhost:3000/exec?access=${ACCESS_KEY}`);
-        console.log(response.data);
+        axios.get(`http://localhost:3000/exec?access=${ACCESS_KEY}`).then((result) => {
+
+            console.log(result);
+        }).catch((err) => {
+            console.log(err)
+        });
     } catch (error) {
         console.error('Error al hacer la llamada:', error);
     }
