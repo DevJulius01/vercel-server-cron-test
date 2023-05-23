@@ -10,7 +10,10 @@ app.get('/exec', (req, res) => {
     const acceso = req.query.access; // Obtener el valor del parámetro "acceso"
 
     // Verificar la seguridad con la llave de acceso
-    if (acceso === ACCESS_KEY) script().then(() => res.send("Did it!"))
+    if (acceso === ACCESS_KEY) {
+        script()
+        console.log("did it!")
+    }
     else {
         res.status(403).send('Acceso no autorizado.');
     }
