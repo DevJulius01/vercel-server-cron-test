@@ -1,13 +1,8 @@
 {
-    "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "./index.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "./api/cron/script.js",
-            "use": "@vercel/node"
+            "source": "/api/(.*)",
+            "destination": "/api"
         }
     ],
     "crons": [
