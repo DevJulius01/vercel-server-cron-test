@@ -8,7 +8,7 @@ export default function script(req, res) {
 
         console.log(result);
     }).catch((err) => {
-        console.log(err)
+        console.log(err.message)
     });
     console.log("hola")
 }
