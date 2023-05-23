@@ -1,7 +1,7 @@
 {
     "crons": [
         {
-            "path": "/api/script?param=holamundo",
+            "path": "/cron/script",
             "schedule": "35 14 * * *"
         }
     ]

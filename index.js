@@ -1,17 +1,22 @@
-const http = require('http');
+require('dotenv').config()
+const express = require('express');
+const script = require('./api/script');
+const app = express();
+const { ACCESS_KEY } = process.env
 
-const server = http.createServer((request, response) => {
-    // Capturando la URL de la solicitud
-    const url = new URL(request.url, `http://${request.headers.host}/api/script`);
 
-    // Capturando un parámetro específico llamado "param"
-    const paramValue = url.searchParams.get('param');
+// Ruta para ejecutar la función asincrónica
+app.get('/exec', (req, res) => {
+    const acceso = req.query.access; // Obtener el valor del parámetro "acceso"
 
-    // Enviando el valor del parámetro como respuesta
-    response.end(`El valor del parámetro es: ${paramValue}`);
-    if (paramValue === process.env.TOKEN) server.close(() => { console.log('servidor detenido') })
+    // Verificar la seguridad con la llave de acceso
+    if (acceso === ACCESS_KEY) script().then(() => res.send("Did it!"))
+    else {
+        res.status(403).send('Acceso no autorizado.');
+    }
 });
 
-server.listen(3000, () => {
+// Iniciar el servidor
+const server = app.listen(3000, () => {
     console.log('Servidor en funcionamiento en el puerto 3000');
 });
