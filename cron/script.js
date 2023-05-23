@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
+/* import * as dotenv from 'dotenv'
+dotenv.config() */
 const { ACCESS_KEY } = process.env
 
 export default async function script() {
