@@ -1,6 +1,6 @@
 //require('dotenv').config()
 const express = require('express');
-const script = require('../utils/script');
+const script = require('./utils/script');
 const app = express();
 const { ACCESS_KEY } = process.env
 
@@ -24,4 +24,3 @@ const server = app.listen(3000, () => {
     console.log('Servidor en funcionamiento en el puerto 3000');
 });
 
-export default app;
