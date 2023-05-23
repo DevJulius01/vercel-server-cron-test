@@ -1,4 +1,4 @@
-const app = require("../utils/app");
+const app = require("./utils/app");
 
 // Iniciar el servidor
 const server = app.listen(3000, () => {

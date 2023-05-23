@@ -13,6 +13,7 @@ app.get('/exec', (req, res) => {
     if (acceso === ACCESS_KEY) {
         script()
         console.log("did it!")
+        res.status(200).send("oki doki")
     }
     else {
         res.status(403).send('Acceso no autorizado.');
