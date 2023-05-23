@@ -2,7 +2,7 @@
 dotenv.config() */
 const { ACCESS_KEY } = process.env
 
-export default function script() {
+function script() {
     try {
         axios.get(`http://localhost:3000/exec?access=${ACCESS_KEY}`).then((result) => {
 
