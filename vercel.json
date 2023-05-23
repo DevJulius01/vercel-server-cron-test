@@ -1,7 +1,7 @@
 {
     "crons": [
         {
-            "path": "/cron/script",
+            "path": "/cron/script.js",
             "schedule": "35 14 * * *"
         }
     ]
