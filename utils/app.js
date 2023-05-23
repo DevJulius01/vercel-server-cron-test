@@ -1,6 +1,6 @@
 //require('dotenv').config()
 const express = require('express');
-const script = require('../utils/script');
+const script = require('./script');
 const app = express();
 const { ACCESS_KEY } = process.env
 
